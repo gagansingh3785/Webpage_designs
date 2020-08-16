@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<style>
+		html, body{
+			margin:0px;
+			padding:0px;
+			height: 100%;
+		}
+		body{
+			background-image: linear-gradient(to top right ,rgb(200, 127, 242) , rgb(231, 83, 159));
+			background-size: cover;
+			background-repeat: no-repeat;	
+		}
+		#form-container{
+			margin-left: auto;
+			margin-right: auto;
+			border-radius: 5px;
+			background-color:white;
+			border: 2px solid white;
+			font-family: cooper;
+			box-shadow: 0px 0px 50px black;
+		}
+		#button{
+			font-family: cooper;
+			color: white;
+			text-align: center;
+			line-height: 40px;
+			font-size: 15px;
+			background-color: rgba(0,0,0);
+			box-shadow: 0px 0px 15px black;
+			width: 100px;
+			height: 40px;
+			border-radius: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 30px;
+			transition: 0.5s;
+		}
+		#button:hover{
+			cursor: pointer;
+			transform: scale(1.1);
+		}
+		#inputs{
+			margin-top: 30px;
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+			 
+		}
+		#title{
+			text-align: center;
+			width:300px;
+			font-size: 30px;
+			font-weight: bolder;
+			color: rgb(50, 50, 50);
+			margin-left:auto;
+			margin-right:auto;
+			margin-top: 20px;
+		}
+		.input{
+			color: rgb(50, 50, 50);
+			height: 40px;
+			width: 250px;
+			font-size: 14px;
+			background-color: rgba(0,0,0,0);
+			border: 1px solid rgb(175,175,175);
+			border-radius: 4px;
+		}
+		.left{
+			float: left;	
+		}
+		.right{
+			float: right;
+		}
+		label{
+			color: rgb(50, 50 ,50);
+			font-size: 20px;
+			font-weight: normal;
+			font-family:default;
+		}
+		textarea{
+			color:rgb(50, 50, 50);
+			font-size: 15px;
+			border: 1px solid rgb(175, 175, 175);
+			border-radius: 5px;
+		}
+		@keyframes rotate{
+			0%{
+				transform: rotateZ(0deg);
+			}
+			20%{
+				transform: rotateZ(5deg);
+			}
+			40%{
+				transform: rotateZ(-5deg);
+			}
+			60%{
+				transform: rotateZ(2deg);
+			}
+			80%{
+				transform: rotateZ(-2deg);
+			}
+			100%{
+				transform: rotateZ(0deg);
+			}
+		}
+		#form-container:hover{
+			animation: rotate 0.5s forwards;
+		}
+	</style>
+	<body>
+		<div id=outer>
+			<div id='form-container'>
+				<div id=title >CONTACT FORM</div>
+				<div id=inputs>
+					<label for=name>NAME: </label><br><input id=name placeholder='First name' class='input' type=text><input type=text class='input right' placeholder='Last name'>
+					<br>
+					<br>
+					<span class=left><label for=company_name>COMPANY'S NAME:</label><br><input id=company_name placeholder='Name of company'class='input' type=text></span>
+					<span class=right><label for=email>EMAIL:</label><br><input id=email placeholder='example@gmail.com' class='input' type=email></span>
+					<span class=left><br><label for=message>MESSAGE:</label><br><textarea rows=4 placeholder='Type your message here...' cols=67 id=message></textarea></span>	
+				</div>
+			</div>
+		<div id='button'>
+			SUBMIT 
+		</div>
+	</div>
+	<script>
+		let form = document.getElementById('form-container');
+		form.style.width = '700px';
+		form.style.height = '400px';
+		let outer = document.getElementById('outer');
+		outer.style.height = '474px';
+		console.log(outer.style.height);
+		outer.style.transform = "translateY("+ (window.innerHeight - 474)/2 + "px)";
+		document.getElementsByTagName('textarea')[0].style.fontFamily = document.getElementsByClassName('input')[0].style.fontFamily; 
+	</script>
+	</body>
+</html>
