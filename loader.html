@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<style>
+		html, body{
+			margin: 0px;
+			padding: 0px;
+		}
+		#loader{
+			position: fixed;
+			width: 100%;
+			height: 100vh;
+			z-index: 400;
+			background-color: white;
+			text-align: center;
+		}
+		#balls{
+			width: 600px;
+			height: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			overflow: hidden;
+		}
+		@keyframes fade{
+			0%{
+				opacity: 1;
+			}
+			100%{
+				opacity: 0;
+
+			}
+		}
+		#red, #green, #yellow, #blue{
+			height: 40px;
+			width: 40px;
+			border-radius: 20px;
+			display: inline-block;
+		}
+		#red{
+			background-color: red;
+		}
+		#green{
+			background-color: green;
+		}
+		#yellow{
+			background-color: yellow;
+		}
+		#blue{
+			background-color: blue;
+		}
+		@keyframes moving1{
+			0%{
+				transform: translateX(-200px);
+				opacity: 0;
+			}
+			50%{
+				transform: translateX(0px);;
+				opacity: 1;
+			}
+			100%{
+				transform: translateX(200px);
+				opacity:0;
+			}
+		}
+		@keyframes moving2{
+			0%{
+				transform: translateX(-200px);
+				opacity: 0;
+			}
+			50%{
+				transform: translateX(-20px);;
+				opacity: 1;
+			}
+			100%{
+				transform: translateX(200px);
+				opacity:0;
+			}
+		}
+		@keyframes moving3{
+			0%{
+				transform: translateX(-200px);
+				opacity: 0;
+			}
+			50%{
+				transform: translateX(-40px);;
+				opacity: 1;
+			}
+			100%{
+				transform: translateX(200px);
+				opacity:0;
+			}
+		}
+		@keyframes moving4{
+			0%{
+				transform: translateX(-200px);
+				opacity: 0;
+			}
+			50%{
+				transform: translateX(-60px);;
+				opacity: 1;
+			}
+			100%{
+				transform: translateX(200px);
+				opacity:0;
+			}
+		}
+	</style>
+	<body>
+		<div id=loader>
+			<div id=balls>
+				<div id=red></div>
+				<div id=green></div>
+				<div id=blue></div>
+				<div id=yellow></div>
+			</div>
+			
+		</div>
+		<!-- Put your content here and remove the comments in addEventListerner for the loading page to take effect -->
+		<script>
+			document.getElementById("balls").style.marginTop = ''+ (window.innerHeight - 50)/2 + 'px';
+			document.getElementById("red").style.animation = "moving4 2s infinite";
+			document.getElementById("yellow").style.animation = "moving1 2s infinite";
+			document.getElementById("blue").style.animation = "moving2 2s infinite";
+			document.getElementById("green").style.animation = "moving3 2s infinite";
+			window.addEventListener("load", ()=>{
+				document.getElementById("loader").style.animation = "fade 1s forwards";
+				setTimeout(function (){document.getElementById("loader").style.display = "none";},1000);
+				
+			});
+		</script>
+	</body>
+
+	</html>
