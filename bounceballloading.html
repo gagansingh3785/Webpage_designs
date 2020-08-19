@@ -72,9 +72,13 @@
 				<p id=text>Loading...</p>
 			</div>
 		</div>
+		<!-- place your content here and remove the comments in the scripts for effects to take place-->
 		<script>
 			document.getElementById('up').style.height = "" + (window.innerHeight - 100)/2 + "px";
 			document.getElementById('ball').style.animation = "bouncing 1s infinite";
+			window.addEventListener('load', ()=>{
+				//document.getElementById('container').style.display = 'none';
+			});
 		</script>
 	</body>
 </html>
