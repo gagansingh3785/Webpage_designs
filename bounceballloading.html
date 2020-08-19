@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>loading
+		</title>
+		<style>
+			html, body{
+				margin: 0px;
+				padding: 0px;
+				height: 100%;
+			}
+			#container{
+				height: 100%;
+				width: 100%;
+			}
+			#internal{
+				height: 100px;
+				width: 300px;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+
+			}
+			#ball{
+				display: inline-block;
+				height: 40px;
+				width: 40px;
+				border-radius: 20px;
+				background-color: red;
+				margin-top: 30px;
+			}
+			#text{
+				display: inline-block;
+				font-size: 30px;
+				color: red;
+				font-weight: bolder;
+				margin-left: 20px;
+				font-family: cooper;
+
+			}
+			@keyframes bouncing{
+				0%{
+					transform: translateY(0px) scaleY(0.7) scaleX(1.6);
+					animation-timing-function: ease-out;
+				}
+				10%{
+					transform: scaleX(1) scaleY(1);
+					animation-timing-function: ease-out;
+				}
+				50%{
+					transform: scaleX(1) scaleY(1) translateY(-100px);
+					animation-timing-function: ease-in;
+				}
+				90%{
+					animation-timing-function: ease-in;
+					transform: scaleX(1) scaleY(1);	
+				}
+				100%{
+					transform: scaleX(1.6) scaleY(0.7) translateY(0px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id=container>
+			<div id=up>
+			</div>
+			<div id=internal>
+				<div id=ball>
+					
+				</div>
+				<p id=text>Loading...</p>
+			</div>
+		</div>
+		<script>
+			document.getElementById('up').style.height = "" + (window.innerHeight - 100)/2 + "px";
+			document.getElementById('ball').style.animation = "bouncing 1s infinite";
+		</script>
+	</body>
+</html>
