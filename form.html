@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<style>
+			html{
+	margin: 0px;
+	height: 100%;
+	padding: 0px;
+}
+body{
+	font-family: verdana;
+	margin: 0px;
+	background-image: linear-gradient(225deg, rgb(58,173, 161) 0 39%, rgb(76, 193, 150) 0 61%);
+}
+h1{
+	font-size: 40px;
+	color: white;
+	text-align: center;
+	padding-top: 10px;
+}
+#form_container{
+	height: 500px;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#inner{
+	display: flex;
+	flex: 1 0 auto;
+	overflow: hidden;
+}
+#loading{
+	height: 4px;
+	border-radius: 2px;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+}
+#bar{
+	height: 4px;
+	width: 400px;
+	border-radius: 2px;
+	transform: translateX(-200px);
+	transition: 0s;
+	background-color: white;
+}
+#first{
+	position: relative;
+	border-radius: 10px;
+	background-color: white;
+	width: 600px;
+	min-width: 600px;
+	height: 400px;
+}
+#second{
+	position: relative;
+	border-radius: 10px;
+	background-color: white;
+	width: 600px;
+	min-width: 600px;
+}
+input{
+	font-family: verdana;
+	font-size: 20px;
+	line-height: 40px;
+	color: white;
+	border: none;
+	width: 250px;
+	height: 40px;
+	border-radius: 5px;
+	margin-top: 50px;
+	margin-left: 30px;
+	background-color: rgb(200, 200, 200);
+}
+.custom_input{
+	color: grey;
+	font-family: verdana;
+	font-size: 20px;
+	line-height: 40px;
+	border: none;
+	width: 255px;
+	height: 40px;
+	border-radius: 5px;
+	margin-top: 50px;
+	margin-left: 30px;
+	background-color: rgb(200, 200, 200);
+}
+button{
+	font-family: verdana;
+	font-size: 20px;
+	line-height: 40px;
+	font-weight: bolder;
+	color: white;
+	background: linear-gradient(45deg, rgb(58,173, 161) 0 50%, rgb(76, 193, 150) 0 50%);
+	border: none;
+	border-radius: 20px;
+	height: 40px;
+	width: 150px;
+}
+#next{
+	position:absolute;
+	bottom: 20px;
+	right: 30px;
+}
+#previous{
+	position: absolute;
+	bottom: 20px;
+	left: 30px;
+}
+#submit{
+	position: absolute;
+	bottom: 20px;
+	right: 30px;
+}
+#interest-list{
+	width: 210px;
+	height: 40px;
+	margin: 50px 0px 0px 30px;
+	border-radius: 5px 0px 0px 5px;
+	background-color: rgb(200, 200, 200);
+}
+#special{
+	font-size: 25px;
+	color: white;
+	width: 40px;
+	height: 42px;
+	border-radius: 0px 5px 5px 0px;
+	background-color: rgb(200, 200 ,200);
+	margin-top: 50px;
+	text-align: center;
+	line-height: 42px;
+}
+#interests{
+	display: flex;
+	flex-wrap: wrap;
+}
+#special:hover{
+	cursor: pointer;
+	font-size: 30px;
+}
+.interestElements{
+	font-size: 20px;
+	font-weight: normal;
+	padding: 0px 5px 0px 5px;
+	color: white;
+	height: 42px;
+	border-radius: 5px;
+	background: linear-gradient(45deg, rgb(58,173, 161) 0 50%, rgb(76, 193, 150) 0 50%);
+	margin-top: 50px;
+	margin-left: 10px;
+	text-align: left;
+	line-height: 42px;
+}
+.interestButton{
+	font-size: 20px;
+	font-weight: normal;
+	padding: 0px 5px 0px 5px;
+	color: white;
+	height: 42px;
+	width: 40px;
+	border-radius: 5px;
+	margin-top: 50px;
+	text-align: right;
+	line-height: 42px;
+}
+
+.interestButton:hover{
+	font-size: 25px;
+}
+		</style>
+	</head>
+	<body>
+		<div id="form_container">
+			<h1>Please fill in your details</h1>
+			<div id="loading">
+				<div id="bar"></div>
+			</div>
+			<br>
+			<form>
+				<div id="inner">
+					<div id="first">
+						<input type="text" id="firstname" name="firstname" required placeholder="First name">
+						<input type="text" id="lastname" name="lastname" required placeholder="Last name">
+						<select id="gender" class="custom_input" required>
+							<option value="" disabled selected> Select your gender</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+							<option value="other">other</option>
+						</select>
+						<select id="religion" class="custom_input" required>
+							<option value="" disabled selected style="color: grey"> Religion</option>
+							<option value="Hindu">Hindu</option>
+							<option value="Muslim">Muslim</option>
+							<option value="Sikh">Sikh</option>
+							<option value="Parsi">Parsi</option>
+							<option value="Christian">Christian</option>
+							<option value="Jain">Jain</option>
+							<option value="Jewish">Jewish</option>
+							<option value="Buddhist">Buddhist</option>
+							<option value="Other">Other</option>
+						</select>
+						<input type="text" id="motherTongue" placeholder="Mother tongue" required>
+						<input type="text" id="dob" placeholder="  Date of birth" required onfocus="(this.type = 'date')" onblur="(this.type = 'text')" class="custom_input">
+						<button id="next" type="button" onclick="next_form()"><i class="fas fa-arrow-circle-right"></i> Next</button>	
+					</div>
+					<div id="second">
+						<input type="number" placeholder=" Age preference" min="18" max="100">
+						<input type="text" placeholder=" Qualification">
+						<div id="interests">
+							<input type="text" id="interest-list" placeholder="Enter interests" maxlength="30">
+							<span id="special" onclick="add_interests()"><i class="fas fa-plus-circle"></i></span>
+						</div>
+						<button id="previous" type="button" onclick="previous_form()"><i class="fas fa-arrow-circle-left"></i> Previous</button>
+						<br>
+						<button id="submit"><i class="fas fa-check-circle"></i> Submit</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script>
+			var container = document.getElementById("form_container");
+var first = document.getElementById("first");
+var second = document.getElementById("second");
+container.style.marginTop = "" + (window.innerHeight - container.offsetHeight)/2 +"px";
+first.style.marginLeft = "" + (container.offsetWidth - first.offsetWidth)/2 + "px";
+second.style.marginLeft = "" + (container.offsetWidth - second.offsetWidth)/2 +  "px";
+function next_form(){
+	var check = performCheck();
+	if(check == 1){
+		first.style.transition = "1s";
+		second.style.transition = "1s";
+		document.getElementById("bar").style.transition = "1s";
+		document.getElementById("bar").style.transform = "translateX(0px)";
+		first.style.transform = "translateX(-" + 650 + "px)";
+		second.style.transform = "translateX(-" + 650 + "px)";
+	}
+	else{
+		alert("please fill all the details");
+	}
+}
+function previous_form(){
+	document.getElementById("bar").style.transform = "translateX(-200px)";
+	first.style.transform = "translateX(" + 0 + "px)";
+	second.style.transform = "translateX(" + 0 + "px)";	
+}
+
+function performCheck(){
+	var nodes = first.children;
+	for(var i = 0; i < nodes.length - 1; i++){
+		if(!nodes[i].checkValidity()){
+			return 0;
+		}
+	}
+	return 1;
+}
+
+function add_interests(){
+	if(document.getElementById("interest-list").value != ""){
+		var wrapper = document.createElement("SPAN");
+		var element = document.createElement("SPAN");
+		var button = document.createElement("SPAN");
+		button.innerHTML = "<i class='fas fa-minus-circle'></i>";
+		wrapper.setAttribute("class", "interestElements");
+		button.setAttribute("class", "interestButton");
+		var text = document.getElementById("interest-list").value;
+		var textNode = document.createTextNode(text);
+		element.appendChild(textNode);
+		wrapper.appendChild(element);
+		wrapper.appendChild(button);
+		button.addEventListener("click", () => {
+			button.parentElement.remove();
+		});
+		document.getElementById("interests").appendChild(wrapper);
+		document.getElementById("interest-list").value = "";
+	}
+	
+}
+
+
+		</script>
+	</body>
+</html>
