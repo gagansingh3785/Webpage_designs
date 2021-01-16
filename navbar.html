@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Navbar</title>
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<style>
+			html, body{
+				margin: 0px;
+				padding: 0px;
+				height: 100%;
+				font-family: sans-serif;
+			}
+			.wrapper{
+				padding: 10px 0px 10px 0px;
+				background-color: rgba(240, 240, 240, 0.2);
+				display: flex;
+				color: white;
+				backdrop-filter: blur(10px);
+				box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+				align-items: center;
+			}
+			.left{
+				margin-left: 10px;
+				margin-right: auto;
+			}
+			.right, #special{
+				line-height: 25px;
+				margin-right: 30px;
+			}
+			#mobile_mover{
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				flex-direction: column;
+				height: 100%;
+				width: 100%;
+				background-color: rgb255,255,255, 0.2);
+				backdrop-filter: blur(5px);
+				color: white;
+				font-size: 30px;
+			}
+			.normal{
+				color: #5890C5;
+				width: 90%;
+				text-align: center;
+				border-radius: 10px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				background-color: rgb(255,255,255);
+				box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+			}
+			#cancel{
+				color: black;
+				width: 90%;
+				font-size: 30px;
+				text-align: right;
+			}
+			#cancel span{
+				cursor: pointer;
+			}
+			.nav-items{
+				font-size: 15px;
+				font-weight: bold;
+				background-color: #5890C5;
+				margin-left: 30px;
+				border-radius: 5px;
+				padding: 5px 10px 5px 10px;
+				box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<span class="left nav-items">logo</span>
+			<span class="right">
+				<span class="nav-items">Home</span>
+				<span class="nav-items">Profile</span>
+				<span class="nav-items">Contact</i></span>
+			</span>
+			<span id="special" class="nav-items"><i class="fas fa-bars"></i></span>
+		</div>
+		<div id="mobile_mover">
+			<div id="cancel"><span id="cancel-toggle"><i class="fas fa-times-circle"></i></span></div>
+			<div class="normal"><span>Home</span></div>
+			<div class="normal"><span>Contact</span></div>
+			<div class="normal"><span>Profile</span></div>
+		</div>
+		<script>
+			var width = window.innerWidth;
+			document.getElementById("mobile_mover").style.transform = "translateX(" + (-1*width) + "px)";
+			var mobile_elements = document.getElementsByClassName("normal");
+			console.log(document.getElementById("mobile_mover"));
+			if(window.innerWidth < 800){
+				document.getElementsByClassName("right")[0].style.display = "none";
+				document.getElementById("special").style.display = "inline";
+			}
+			else{
+				document.getElementsByClassName("right")[0].style.display = "inline";
+				document.getElementById("special").style.display = "none";
+			}
+			window.addEventListener("resize", ()=>{
+				width = window.innerWidth;
+				document.getElementById("mobile_mover").style.transition = "0s";
+				document.getElementById("mobile_mover").style.transform = "translateX(" + (-1 * width) + "px)";
+				if(window.innerWidth < 800){
+					document.getElementsByClassName("right")[0].style.display = "none";
+					document.getElementById("special").style.display = "inline";
+				}
+				else{
+					document.getElementsByClassName("right")[0].style.display = "inline";
+					document.getElementById("special").style.display = "none";
+				}
+			});
+			document.getElementById("special").addEventListener("click", () =>{
+				document.getElementById("mobile_mover").style.transition = "0.5s";
+				document.getElementById("mobile_mover").style.transform = "translateX(0px)";
+			});
+			document.getElementById("cancel-toggle").addEventListener("click", () => {
+				document.getElementById("mobile_mover").style.transform = "translateX(" + (-1 * width) + "px)";
+			});
+
+		</script>
+	</body>
+</html>
