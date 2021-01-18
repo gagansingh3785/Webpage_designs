@@ -90,10 +90,11 @@
 		</div>
 		<script>
 			var width = window.innerWidth;
+			console.log(screen.width);
 			document.getElementById("mobile_mover").style.transform = "translateX(" + (-1*width) + "px)";
 			var mobile_elements = document.getElementsByClassName("normal");
 			console.log(document.getElementById("mobile_mover"));
-			if(window.innerWidth < 800){
+			if(width < 800 || screen.width < 800){
 				document.getElementsByClassName("right")[0].style.display = "none";
 				document.getElementById("special").style.display = "inline";
 			}
